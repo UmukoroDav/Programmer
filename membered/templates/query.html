@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .btn-group {
+  width: 40%;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.btn-group .button {
+  background-color: #4CAF50; /* Green */
+   border: 1px solid green;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  float: left;
+}
+
+.btn-group .button:hover {
+background-color: #3e8e41;
+}
+
+.btn-group .button:not(:last-child) {
+border-right: none; /* Prevent double borders */
+}
+</style>
+</head>
+<body>
+    <h3 style="text-align: center;">Query Page</h3>
+   <div class="btn-group">
+    <a href="{% url 'appinfo' %}" class="button">Info</a>
+    <a href="{% url 'appindex' %}" class="button">index</a>
+    <a href="{% url 'appregistration' %}" class="button">registration</a>
+   </div>
+</body>
+</html>

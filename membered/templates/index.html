@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<style>
+        #customers {
+          font-family: cursive;
+          border-collapse: collapse;
+          width: 100%;
+        }
+        
+        #customers td, #customers th {
+          border: 1px solid #000;
+          padding: 8px;
+          font-size: 11px;
+        }
+        
+        #customers tr:nth-child(even){background-color: #f2f2f2;}
+        
+        #customers tr:hover {background-color: #ddd;}
+        
+        #customers th {
+          padding-top: 12px;
+          padding-bottom: 12px;
+          text-align: left;
+          background-color: #04AA6D;
+          color: white;
+        }
+
+        .btn-group {
+          width: 40%;
+          margin: auto;
+          margin-top: 20px;
+        }
+
+        .btn-group .button {
+          background-color: #4CAF50; /* Green */
+           border: 1px solid #000;
+          color: white;
+          padding: 15px 32px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          cursor: pointer;
+          float: left;
+        }
+
+      .btn-group .button:hover {
+        background-color: #3e8e41;
+      }
+
+      .btn-group .button:not(:last-child) {
+  border-right: none; /* Prevent double borders */
+}
+
+</style>
+</head>
+<body>
+    <h3 style="text-align: center;">Index Page</h3>
+
+    <table id="customers">
+        <tr>
+          <th>Surname</th>
+          <th>Name</th>
+          <th>Address</th>
+          <th>DOB</th>
+          <th>Age</th>
+          <th>Telephone</th>
+          <th>Whatsapp</th>
+          <th>Email</th>
+          <th>Nationality</th>
+          <th>State Of Origin</th>
+          <th>Session</th>
+          <th>Past Qualification</th>
+          <th>Computer Course</th>
+        </tr>
+
+        {% for i in key %}
+        <tr>
+            <td> {{ i.Surname }}</td>
+            <td> {{ i.Name }}</td>
+            <td> {{ i.Address }}</td>
+            <td> {{ i.Date_of_birth }}</td>
+            <td> {{ i.Age }}</td>
+            <td> {{ i.Telephone }}</td>
+            <td> {{ i.WhatsApp }}</td>
+            <td> {{ i.Email }}</td>
+            <td> {{ i.Nationality }}</td>
+            <td> {{ i.Sate_of_Origin }}</td>
+            <td> {{ i.Session }}</td>
+            <td> {{ i.Past_Qualification }}</td>
+            <td> {{ i.Computer_Course }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+
+      <div class="btn-group">
+        <a href="{% url 'appinfo' %}" class="button">Info</a>
+        <a href="{% url 'appquery' %}" class="button">query</a>
+        <a href="{% url 'appregistration' %}" class="button">registration</a>
+      </div>
+</body>
+</html>
